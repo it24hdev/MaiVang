@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Ho_Chi_Minh',
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'vi',
 
     /*
     |--------------------------------------------------------------------------
@@ -109,7 +109,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'vi_VN',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,11 +163,26 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
+        App\Core\Providers\AppServiceProvider::class,
+        App\Core\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        App\Core\Providers\EventServiceProvider::class,
+        App\Core\Providers\RouteServiceProvider::class,
+
+        /**
+         * Admin module
+         */
+        App\Admin\Providers\AdminServiceProvider::class,
+        App\Admin\Providers\RouteServiceProvider::class,
+        App\Admin\Providers\AuthServiceProvider::class,
+
+
+        /**
+         * Web module
+         */
+        App\Web\Providers\WebServiceProvider::class,
+        App\Web\Providers\RouteServiceProvider::class,
+
     ])->toArray(),
 
     /*
